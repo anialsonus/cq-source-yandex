@@ -7,6 +7,7 @@ import (
 	"github.com/yandex-cloud/cq-provider-yandex/resources/services/certificatemanager"
 	"github.com/yandex-cloud/cq-provider-yandex/resources/services/compute"
 	"github.com/yandex-cloud/cq-provider-yandex/resources/services/containerregistry"
+	"github.com/yandex-cloud/cq-provider-yandex/resources/services/dns"
 	"github.com/yandex-cloud/cq-provider-yandex/resources/services/iam"
 	"github.com/yandex-cloud/cq-provider-yandex/resources/services/k8s"
 	"github.com/yandex-cloud/cq-provider-yandex/resources/services/kms"
@@ -44,5 +45,6 @@ func Tables() []*schema.Table {
 		vpc.Networks(),
 		vpc.SecurityGroups(),
 		vpc.Subnets(),
+		dns.Zones(),
 	}
 }

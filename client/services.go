@@ -8,6 +8,7 @@ import (
 	"github.com/yandex-cloud/go-sdk/gen/certificatemanager"
 	"github.com/yandex-cloud/go-sdk/gen/compute"
 	"github.com/yandex-cloud/go-sdk/gen/containerregistry"
+	"github.com/yandex-cloud/go-sdk/gen/dns"
 	"github.com/yandex-cloud/go-sdk/gen/iam"
 	"github.com/yandex-cloud/go-sdk/gen/kms"
 	k8s "github.com/yandex-cloud/go-sdk/gen/kubernetes"
@@ -32,6 +33,7 @@ type (
 		ApiGateway              *apigateway.Apigateway
 		Storage                 *storage.StorageAPI
 		VPC                     *vpc.VPC
+		DNS                     *dns.DNS
 	}
 )
 
@@ -49,5 +51,6 @@ func initServices(_ context.Context, sdk *ycsdk.SDK) (*Services, error) {
 		ApiGateway:              sdk.Serverless().APIGateway(),
 		Storage:                 sdk.StorageAPI(),
 		VPC:                     sdk.VPC(),
+		DNS:                     sdk.DNS(),
 	}, nil
 }
